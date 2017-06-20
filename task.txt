@@ -1,0 +1,37 @@
+Problem:
+============================
+
+Your task is to write a WKT format geometry writer and reader in Java.
+
+The object model for geometries is implemented already and available in attached JAR file.
+
+You should therefore write WKTWriter and WKTReader classes, using the attached templates.
+WKTWriter method write takes Geometry object as an argument (types of objects will be Point, LineString, Polygon, GeometryCollection, MultiPoint, MultiLineString ali MultiPolygon) and returns a text stream (String) representing given geometry in WKT format.
+WKTReader method read takes a WKT formatted String, transformes in into a Geometry object and returns it.
+
+
+Basic information about the format can be found on Wikipedia:
+http://en.wikipedia.org/wiki/Well-known_text
+Detailed information are available in  OGC Simple Feature Access specifications. chapter 7 (first document at http://www.opengeospatial.org/standards/sfa).
+BNF notation in the document might be too complex, in which case you can use data from Wikipedia only.
+
+The implementation should support 2D geometry objects (meaning you can ignore POINT Z, POINT M, POINT ZM in above mentioned documents).
+In specifications there are also some other types of geometries described, which are not implemented in the object model - ignore those also (triangle, polyhedralsurface, tin...).
+
+Empty geometries are possible in object model so the implementation should support these (these are objects, created with constructor without parameters and returning true when called isEmptry()).
+
+Some examples:
+
+write(new Point(30, 10)) returns "POINT (30 10)"
+
+write(new LineString()) returns "LINESTRING EMPTY"
+
+write(new GeometryCollection<Geometry>(new Geometry[]{new Point(4,6), new LineString(new double[] {4,6,7,10})}))
+returns "GEOMETRYCOLLECTION (POINT (4 6), LINESTRING (4 6, 7 10))"
+
+============================
+
+Some further links if required:
+
+http://docs.oracle.com/javase/tutorial/getStarted/index.html
+http://docs.oracle.com/javase/tutorial/java/index.html
