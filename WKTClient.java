@@ -1,6 +1,6 @@
 /******************************************************************************
   *  Author:       Deniz Ece Aktan
-  *  Compilation:  javac WKTClient.java WKTReader.java WKTWriter.java
+  *  Compilation:  javac WKTClient.javac WKTReader.javac WKTWriter.java
   *  Execution:    java WKTClient
   * 
   *  Dependencies: com.sinergise.geometry.*, WKTReader, WKTWriter
